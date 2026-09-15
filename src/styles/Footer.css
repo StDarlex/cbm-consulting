@@ -1,0 +1,370 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+  padding: 110px 6vw 30px;
+  background:
+    radial-gradient(
+      circle at 82% 20%,
+      rgba(198, 161, 91, 0.07),
+      transparent 25%
+    ),
+    #10110f;
+  color: #f7f3eb;
+  border-top: 1px solid rgba(247, 243, 235, 0.08);
+}
+
+/* GOLDEN LINE */
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 6vw;
+  width: 88vw;
+  height: 1px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(198, 161, 91, 0.65),
+      transparent
+    );
+}
+
+/* TOP */
+
+.footer__top {
+  width: min(1380px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns:
+    minmax(260px, 1.8fr)
+    minmax(150px, 0.8fr)
+    minmax(210px, 1fr)
+    minmax(180px, 0.9fr);
+  gap: 70px;
+}
+
+/* BRAND */
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer__logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(198, 161, 91, 0.65);
+  color: #c6a15b;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.footer__logo-name {
+  color: #f7f3eb;
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.footer__brand-title {
+  margin: 28px 0 0;
+  color: #f7f3eb;
+  font-family: "Manrope", sans-serif;
+  font-size: 19px;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.footer__brand-description {
+  width: min(390px, 100%);
+  margin: 20px 0 0;
+  color: rgba(247, 243, 235, 0.42);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* LABELS */
+
+.footer__label {
+  display: block;
+  margin-bottom: 25px;
+  color: #c6a15b;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.23em;
+}
+
+/* LINKS */
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.footer__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(247, 243, 235, 0.62);
+  font-size: 12px;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer__links a span {
+  color: #c6a15b;
+  font-size: 10px;
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer__links a:hover {
+  color: #f7f3eb;
+  transform: translateX(3px);
+}
+
+.footer__links a:hover span {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* CONTACT */
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.footer__contact a {
+  color: rgba(247, 243, 235, 0.7);
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer__contact a:hover {
+  color: #c6a15b;
+}
+
+.footer__contact span {
+  margin-top: 8px;
+  color: rgba(247, 243, 235, 0.34);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* CEO */
+
+.footer__ceo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer__ceo > span {
+  color: rgba(247, 243, 235, 0.3);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.footer__ceo strong {
+  margin-top: 10px;
+  color: #f7f3eb;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+.footer__ceo p {
+  width: min(200px, 100%);
+  margin: 15px 0 0;
+  color: rgba(247, 243, 235, 0.34);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* STATEMENT */
+
+.footer__statement {
+  position: relative;
+  width: min(1380px, 100%);
+  margin: 115px auto 0;
+  padding: 75px 0 80px;
+  border-top: 1px solid rgba(247, 243, 235, 0.08);
+  border-bottom: 1px solid rgba(247, 243, 235, 0.08);
+  text-align: center;
+}
+
+.footer__statement > span {
+  color: rgba(247, 243, 235, 0.27);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+
+.footer__statement h2 {
+  margin: 25px 0 0;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(48px, 7vw, 92px);
+  line-height: 0.9;
+  letter-spacing: -0.065em;
+  font-weight: 700;
+}
+
+.footer__statement h2 em {
+  display: block;
+  color: #c6a15b;
+  font-style: normal;
+}
+
+/* BOTTOM */
+
+.footer__bottom {
+  width: min(1380px, 100%);
+  margin: 25px auto 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 25px;
+  color: rgba(247, 243, 235, 0.24);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.footer__bottom span:nth-child(2) {
+  text-align: center;
+}
+
+.footer__bottom span:last-child {
+  text-align: right;
+  color: rgba(198, 161, 91, 0.5);
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .footer__top {
+    grid-template-columns:
+      1.4fr
+      1fr
+      1fr;
+    gap: 55px 45px;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer__brand-description {
+    max-width: 500px;
+  }
+
+  .footer__statement {
+    margin-top: 90px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .footer {
+    padding: 80px 7vw 25px;
+  }
+
+  .footer::before {
+    left: 7vw;
+    width: 86vw;
+  }
+
+  .footer__top {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+  }
+
+  .footer__brand-title {
+    font-size: 18px;
+  }
+
+  .footer__brand-description {
+    font-size: 11px;
+  }
+
+  .footer__column {
+    padding-top: 5px;
+  }
+
+  .footer__label {
+    margin-bottom: 18px;
+  }
+
+  .footer__links {
+    gap: 13px;
+  }
+
+  .footer__contact {
+    gap: 12px;
+  }
+
+  .footer__statement {
+    margin-top: 70px;
+    padding: 60px 0;
+  }
+
+  .footer__statement h2 {
+    font-size: clamp(45px, 14vw, 65px);
+  }
+
+  .footer__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .footer__bottom span:nth-child(2),
+  .footer__bottom span:last-child {
+    text-align: center;
+  }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 380px) {
+  .footer {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .footer__statement h2 {
+    font-size: 43px;
+  }
+
+  .footer__brand-title {
+    font-size: 17px;
+  }
+}

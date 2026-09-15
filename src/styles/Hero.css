@@ -1,0 +1,821 @@
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100svh;
+
+  /*
+    Ya no forzamos una altura exacta.
+    El contenido puede crecer y el usuario puede
+    recorrer todo el Hero antes de pasar a Consulting.
+  */
+  height: auto;
+
+  overflow: hidden;
+
+  background: #171715;
+  color: #f7f3eb;
+}
+
+
+/* =========================================================
+   MEDIA
+   ========================================================= */
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+.hero__image {
+  position: absolute;
+
+  inset: -5%;
+
+  width: 110%;
+  height: 110%;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+
+  will-change: transform;
+}
+
+
+.hero__image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(16, 16, 15, 0.96) 0%,
+    rgba(16, 16, 15, 0.88) 22%,
+    rgba(16, 16, 15, 0.62) 45%,
+    rgba(16, 16, 15, 0.25) 70%,
+    rgba(16, 16, 15, 0.08) 100%
+  );
+
+  pointer-events: none;
+}
+
+
+.hero__gradient {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(16, 16, 15, 0.58) 0%,
+    transparent 28%,
+    transparent 65%,
+    rgba(16, 16, 15, 0.88) 100%
+  );
+
+  pointer-events: none;
+}
+
+
+.hero__light {
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  right: -240px;
+  top: 5%;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(198, 161, 91, 0.18) 0%,
+    rgba(198, 161, 91, 0.08) 30%,
+    rgba(198, 161, 91, 0.025) 52%,
+    transparent 72%
+  );
+
+  pointer-events: none;
+
+  will-change: transform;
+}
+
+
+.hero__vignette {
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    ellipse at center,
+    transparent 35%,
+    rgba(0, 0, 0, 0.38) 100%
+  );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TOP LINE
+   ========================================================= */
+
+.hero__topline {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 20;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 30px 5vw;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  color: rgba(247, 243, 235, 0.65);
+
+  will-change: transform, opacity;
+}
+
+
+.hero__brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #f7f3eb;
+}
+
+
+.hero__brand-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #c6a15b;
+
+  box-shadow:
+    0 0 16px rgba(198, 161, 91, 0.65);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.hero__content {
+  position: relative;
+
+  z-index: 15;
+
+  width: min(760px, 62vw);
+
+  margin-left: 5vw;
+
+  /*
+    Dejamos espacio superior para el header
+    y espacio inferior real para que todo el
+    contenido pueda verse antes de terminar el Hero.
+  */
+  padding-top: 22vh;
+  padding-bottom: 150px;
+
+  will-change: transform, opacity;
+}
+
+
+.hero__eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  margin: 0 0 30px;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+
+  color: #d8bb80;
+}
+
+
+.hero__eyebrow span {
+  margin: 0 10px;
+
+  color: rgba(247, 243, 235, 0.32);
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.hero__title {
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(54px, 6.4vw, 96px);
+
+  font-weight: 700;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+
+  color: #f7f3eb;
+}
+
+
+.hero__title-line {
+  display: block;
+
+  width: max-content;
+
+  max-width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  line-height: 0.98;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  will-change: transform, opacity;
+}
+
+
+.hero__title-line--gold {
+  color: #d8bb80;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.hero__description {
+  width: 100%;
+
+  max-width: 500px;
+
+  margin: 34px 0 0;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  color: rgba(247, 243, 235, 0.72);
+}
+
+
+/* =========================================================
+   INFORMATION AREA
+   =========================================================
+   
+   Ya NO existen botones.
+   Esta zona es únicamente editorial/informativa.
+   ========================================================= */
+
+.hero__actions {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(220px, 1fr));
+
+  gap: 64px;
+
+  width: 100%;
+
+  max-width: 700px;
+
+  margin-top: 44px;
+}
+
+
+.hero__statement {
+  position: relative;
+
+  padding-left: 18px;
+
+  max-width: 330px;
+}
+
+
+.hero__statement::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 2px;
+  bottom: 2px;
+
+  width: 1px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(198, 161, 91, 0.65),
+      rgba(247, 243, 235, 0.15)
+    );
+}
+
+
+.hero__statement > span {
+  display: block;
+
+  margin-bottom: 11px;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  color: #d8bb80;
+}
+
+
+.hero__statement p {
+  margin: 0;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 1.75;
+
+  color: rgba(247, 243, 235, 0.62);
+}
+
+
+/* =========================================================
+   BOTTOM AREA
+   ========================================================= */
+
+.hero__bottom {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  z-index: 20;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr auto 1fr;
+
+  align-items: center;
+
+  padding: 28px 5vw;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  color: rgba(247, 243, 235, 0.42);
+
+  will-change: transform, opacity;
+
+  pointer-events: none;
+}
+
+
+.hero__bottom > span:last-child {
+  text-align: right;
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+   ========================================================= */
+
+.hero__scroll {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.hero__scroll span {
+  font-size: 8px;
+
+  letter-spacing: 0.2em;
+
+  color: rgba(247, 243, 235, 0.48);
+}
+
+
+.hero__scroll i {
+  position: relative;
+
+  display: block;
+
+  width: 1px;
+  height: 42px;
+
+  overflow: hidden;
+
+  background: rgba(247, 243, 235, 0.25);
+}
+
+
+.hero__scroll i::after {
+  content: "";
+
+  position: absolute;
+
+  top: -50%;
+  left: 0;
+
+  width: 1px;
+  height: 50%;
+
+  background: #c6a15b;
+
+  animation:
+    heroScrollLine
+    2.2s
+    cubic-bezier(0.65, 0, 0.35, 1)
+    infinite;
+}
+
+
+@keyframes heroScrollLine {
+  0% {
+    top: -50%;
+  }
+
+  45% {
+    top: 100%;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+
+/* =========================================================
+   FRAME
+   ========================================================= */
+
+.hero__frame {
+  position: absolute;
+
+  inset: 24px;
+
+  z-index: 5;
+
+  border:
+    1px solid
+    rgba(247, 243, 235, 0.07);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .hero__content {
+    width: 72vw;
+
+    padding-top: 24vh;
+
+    padding-bottom: 150px;
+  }
+
+  .hero__title {
+    font-size:
+      clamp(48px, 7vw, 78px);
+  }
+
+  .hero__actions {
+    max-width: 650px;
+
+    gap: 45px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 100svh;
+
+    height: auto;
+
+    /*
+      Importante:
+      permitimos que el Hero crezca verticalmente
+      cuando el contenido lo necesite.
+    */
+    overflow: hidden;
+  }
+
+
+  .hero__image {
+    width: 125%;
+    height: 110%;
+
+    left: -10%;
+
+    object-position: 62% center;
+  }
+
+
+  .hero__image-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(16, 16, 15, 0.97) 0%,
+      rgba(16, 16, 15, 0.87) 35%,
+      rgba(16, 16, 15, 0.58) 68%,
+      rgba(16, 16, 15, 0.2) 100%
+    );
+  }
+
+
+  .hero__gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(16, 16, 15, 0.62) 0%,
+      transparent 28%,
+      transparent 62%,
+      rgba(16, 16, 15, 0.94) 100%
+    );
+  }
+
+
+  .hero__topline {
+    padding: 24px 6vw;
+
+    font-size: 8px;
+
+    letter-spacing: 0.14em;
+  }
+
+
+  .hero__topline > span:nth-child(2) {
+    display: none;
+  }
+
+
+  .hero__content {
+    width: auto;
+
+    margin-left: 6vw;
+    margin-right: 6vw;
+
+    /*
+      Altura suficiente para el header,
+      pero ahora también tenemos padding inferior.
+    */
+    padding-top: 170px;
+
+    padding-bottom: 155px;
+  }
+
+
+  .hero__eyebrow {
+    margin-bottom: 23px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.14em;
+  }
+
+
+  .hero__eyebrow span {
+    margin: 0 6px;
+  }
+
+
+  .hero__title {
+    font-size:
+      clamp(42px, 11.5vw, 64px);
+
+    line-height: 0.97;
+
+    letter-spacing: -0.05em;
+  }
+
+
+  .hero__title-line {
+    width: auto;
+
+    max-width: 100%;
+
+    line-height: 0.97;
+
+    white-space: normal;
+  }
+
+
+  .hero__description {
+    max-width: 390px;
+
+    margin-top: 27px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+
+  /*
+    La información ahora se acomoda
+    verticalmente en móvil.
+  */
+
+  .hero__actions {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 30px;
+
+    width: 100%;
+
+    max-width: 390px;
+
+    margin-top: 34px;
+  }
+
+
+  .hero__statement {
+    max-width: 100%;
+
+    padding-left: 16px;
+  }
+
+
+  .hero__statement > span {
+    font-size: 8px;
+
+    letter-spacing: 0.16em;
+  }
+
+
+  .hero__statement p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+
+  /*
+    El bottom queda realmente al final
+    de la pantalla inicial, pero el contenido
+    tiene suficiente espacio para no taparse.
+  */
+
+  .hero__bottom {
+    grid-template-columns:
+      1fr auto;
+
+    padding: 22px 6vw;
+  }
+
+
+  .hero__bottom > span:last-child {
+    display: none;
+  }
+
+
+  .hero__bottom > span:first-child {
+    font-size: 7px;
+  }
+
+
+  .hero__scroll span {
+    display: none;
+  }
+
+
+  .hero__scroll i {
+    height: 32px;
+  }
+
+
+  .hero__light {
+    width: 340px;
+    height: 340px;
+
+    right: -160px;
+    top: 15%;
+  }
+
+
+  .hero__frame {
+    inset: 14px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .hero__content {
+    padding-top: 155px;
+
+    padding-bottom: 145px;
+  }
+
+
+  .hero__title {
+    font-size:
+      clamp(39px, 11.5vw, 52px);
+  }
+
+
+  .hero__description {
+    font-size: 13px;
+  }
+
+
+  .hero__statement p {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll i::after {
+    animation: none;
+  }
+}

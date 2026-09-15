@@ -1,0 +1,1170 @@
+/* =========================================================
+   CBM — THE PLACE
+   Cinematic / Architectural / Interactive
+   ========================================================= */
+
+.the-place {
+  --place-black: #111210;
+  --place-black-deep: #0b0c0b;
+  --place-gold: #c6a15b;
+  --place-gold-light: #d8bb80;
+  --place-white: #f7f3eb;
+  --place-muted: rgba(247, 243, 235, 0.48);
+  --place-line: rgba(247, 243, 235, 0.11);
+
+  position: relative;
+  min-height: 300vh;
+  overflow: clip;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(198, 161, 91, 0.055),
+      transparent 32%
+    ),
+    var(--place-black);
+
+  color: var(--place-white);
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.the-place__intro {
+  position: relative;
+  z-index: 5;
+
+  width: min(760px, 88vw);
+  margin: 0 auto;
+
+  padding: 17vh 0 9vh;
+
+  text-align: center;
+}
+
+
+.the-place__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  color: rgba(247, 243, 235, 0.48);
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.23em;
+}
+
+
+.the-place__eyebrow i {
+  display: block;
+
+  width: 30px;
+  height: 1px;
+
+  background: var(--place-gold);
+}
+
+
+.the-place__intro h2 {
+  margin: 28px 0 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(48px, 6vw, 82px);
+  line-height: 0.93;
+
+  letter-spacing: -0.06em;
+  font-weight: 700;
+}
+
+
+.the-place__title-line {
+  display: block;
+}
+
+
+.the-place__title-line--gold {
+  color: var(--place-gold);
+}
+
+
+.the-place__description {
+  width: min(560px, 100%);
+
+  margin: 32px auto 0;
+
+  color: rgba(247, 243, 235, 0.48);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+   ========================================================= */
+
+.the-place__experience {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 720px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   ARCHITECTURAL FRAME
+   ========================================================= */
+
+.the-place__frame {
+  position: relative;
+
+  width: min(1040px, 88vw);
+  height: min(650px, 72vh);
+  min-height: 540px;
+
+  border: 1px solid rgba(247, 243, 235, 0.12);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(247, 243, 235, 0.025),
+      transparent 35%
+    ),
+    rgba(255, 255, 255, 0.008);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 50px 120px rgba(0, 0, 0, 0.35),
+    inset 0 0 100px rgba(0, 0, 0, 0.2);
+}
+
+
+/* cinematic inner border */
+
+.the-place__frame::before {
+  content: "";
+
+  position: absolute;
+  inset: 16px;
+
+  border: 1px solid rgba(247, 243, 235, 0.045);
+
+  pointer-events: none;
+
+  z-index: 30;
+}
+
+
+/* top light */
+
+.the-place__frame::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 15%;
+
+  width: 70%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(198, 161, 91, 0.5),
+      transparent
+    );
+
+  opacity: 0.65;
+
+  z-index: 31;
+}
+
+
+/* =========================================================
+   MAP
+   ========================================================= */
+
+.the-place__map {
+  position: absolute;
+
+  inset: -45px;
+
+  will-change: transform;
+
+  transform-origin: center;
+}
+
+
+/* technical grid */
+
+.the-place__grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(247, 243, 235, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(247, 243, 235, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 42px 42px;
+
+  mask-image:
+    radial-gradient(
+      circle at center,
+      black 15%,
+      transparent 78%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   GOLDEN LIGHT
+   ========================================================= */
+
+.the-place__glow {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 330px;
+  height: 330px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(198, 161, 91, 0.15) 0%,
+      rgba(198, 161, 91, 0.055) 32%,
+      transparent 70%
+    );
+
+  filter: blur(8px);
+
+  pointer-events: none;
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   ARCHITECTURE
+   ========================================================= */
+
+.the-place__architecture {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 620px;
+  height: 420px;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(247, 243, 235, 0.18);
+
+  background:
+    rgba(247, 243, 235, 0.012);
+
+  box-shadow:
+    0 0 80px rgba(198, 161, 91, 0.035);
+
+  transition:
+    transform 0.8s ease;
+}
+
+
+/* architectural walls */
+
+.the-place__wall {
+  position: absolute;
+
+  display: block;
+
+  background: rgba(247, 243, 235, 0.18);
+}
+
+
+.the-place__wall--top {
+  top: 31%;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+}
+
+
+.the-place__wall--right {
+  top: 0;
+  right: 35%;
+
+  width: 1px;
+  height: 100%;
+}
+
+
+.the-place__wall--bottom {
+  bottom: 29%;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+}
+
+
+.the-place__wall--left {
+  top: 0;
+  left: 32%;
+
+  width: 1px;
+  height: 100%;
+}
+
+
+/* =========================================================
+   ROOMS
+   ========================================================= */
+
+.the-place__room {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(247, 243, 235, 0.26);
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+
+  transition:
+    color 0.4s ease,
+    background-color 0.4s ease;
+}
+
+
+.the-place__room--one {
+  top: 0;
+  left: 0;
+
+  width: 32%;
+  height: 31%;
+}
+
+
+.the-place__room--two {
+  top: 0;
+  left: 32%;
+
+  width: 33%;
+  height: 31%;
+}
+
+
+.the-place__room--three {
+  top: 0;
+  right: 0;
+
+  width: 35%;
+  height: 31%;
+}
+
+
+.the-place__room--four {
+  bottom: 0;
+  left: 0;
+
+  width: 32%;
+  height: 29%;
+}
+
+
+.the-place__room--five {
+  right: 0;
+  bottom: 0;
+
+  width: 35%;
+  height: 29%;
+}
+
+
+/* entrance */
+
+.the-place__entrance {
+  position: absolute;
+
+  left: 50%;
+  bottom: -1px;
+
+  transform: translateX(-50%);
+
+  width: 80px;
+  height: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top: 1px solid var(--place-gold);
+
+  color: rgba(198, 161, 91, 0.65);
+
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+
+/* =========================================================
+   CENTER
+   ========================================================= */
+
+.the-place__center {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 170px;
+  height: 170px;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 25%,
+      rgba(198, 161, 91, 0.12),
+      transparent 55%
+    ),
+    #10110f;
+
+  border: 1px solid rgba(198, 161, 91, 0.55);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.5),
+    0 0 0 12px rgba(198, 161, 91, 0.025),
+    0 0 60px rgba(198, 161, 91, 0.05);
+
+  z-index: 10;
+
+  text-align: center;
+}
+
+
+.the-place__center::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -13px;
+
+  border: 1px solid rgba(198, 161, 91, 0.14);
+
+  border-radius: 50%;
+}
+
+
+.the-place__center > span {
+  margin-bottom: 8px;
+
+  color: var(--place-gold);
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.3em;
+}
+
+
+.the-place__center strong {
+  color: var(--place-white);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 17px;
+  line-height: 1.05;
+
+  letter-spacing: 0.08em;
+}
+
+
+.the-place__center small {
+  margin-top: 12px;
+
+  color: rgba(247, 243, 235, 0.32);
+
+  font-size: 5px;
+
+  letter-spacing: 0.2em;
+}
+
+
+/* =========================================================
+   INTERACTIVE POINTS
+   ========================================================= */
+
+.the-place__point {
+  position: absolute;
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--place-white);
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+
+.the-place__point-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 31px;
+  height: 31px;
+
+  border: 1px solid rgba(247, 243, 235, 0.2);
+
+  border-radius: 50%;
+
+  color: rgba(247, 243, 235, 0.48);
+
+  font-size: 7px;
+  font-weight: 700;
+
+  transition:
+    color 0.35s ease,
+    border-color 0.35s ease,
+    background-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.the-place__point-name {
+  color: rgba(247, 243, 235, 0.55);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  transition:
+    color 0.35s ease;
+}
+
+
+/* positions */
+
+.the-place__point--1 {
+  top: 13%;
+  left: 11%;
+}
+
+
+.the-place__point--2 {
+  top: 13%;
+  right: 10%;
+}
+
+
+.the-place__point--3 {
+  bottom: 13%;
+  left: 10%;
+}
+
+
+.the-place__point--4 {
+  bottom: 13%;
+  right: 11%;
+}
+
+
+.the-place__point--5 {
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, 145px);
+}
+
+
+/* active */
+
+.the-place__point.is-active .the-place__point-number,
+.the-place__point:hover .the-place__point-number,
+.the-place__point:focus-visible .the-place__point-number {
+  border-color: rgba(198, 161, 91, 0.75);
+
+  background:
+    rgba(198, 161, 91, 0.08);
+
+  color: var(--place-gold);
+
+  box-shadow:
+    0 0 0 6px rgba(198, 161, 91, 0.04);
+}
+
+
+.the-place__point.is-active .the-place__point-name,
+.the-place__point:hover .the-place__point-name,
+.the-place__point:focus-visible .the-place__point-name {
+  color: var(--place-gold);
+}
+
+
+.the-place__point:focus-visible {
+  outline: none;
+}
+
+
+/* =========================================================
+   TECHNICAL COORDINATES
+   ========================================================= */
+
+.the-place__coordinates {
+  position: absolute;
+
+  right: 32px;
+  top: 31px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  color: rgba(247, 243, 235, 0.24);
+
+  font-size: 6px;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  z-index: 35;
+}
+
+
+.the-place__corner {
+  position: absolute;
+
+  z-index: 35;
+
+  color: rgba(247, 243, 235, 0.25);
+
+  font-size: 6px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+
+.the-place__corner--top {
+  top: 30px;
+  left: 32px;
+}
+
+
+.the-place__corner--bottom {
+  right: 32px;
+  bottom: 30px;
+}
+
+
+/* =========================================================
+   INFORMATION
+   ========================================================= */
+
+.the-place__info {
+  position: absolute;
+
+  left: 50%;
+  bottom: 74px;
+
+  width: min(440px, 76vw);
+
+  transform: translateX(-50%);
+
+  text-align: center;
+
+  z-index: 40;
+}
+
+
+.the-place__info-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-bottom: 11px;
+
+  color: rgba(247, 243, 235, 0.28);
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+
+.the-place__info-index span:first-child {
+  color: var(--place-gold);
+}
+
+
+.the-place__info-index i {
+  width: 30px;
+  height: 1px;
+
+  background: rgba(247, 243, 235, 0.14);
+}
+
+
+.the-place__info-category {
+  color: var(--place-gold);
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+}
+
+
+.the-place__info h3 {
+  margin: 7px 0 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(25px, 3vw, 38px);
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+}
+
+
+.the-place__info p {
+  width: min(400px, 100%);
+
+  margin: 13px auto 0;
+
+  color: rgba(247, 243, 235, 0.43);
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FINAL STATEMENT
+   ========================================================= */
+
+.the-place__motto {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(700px, 88vw);
+
+  margin: 0 auto;
+
+  padding: 11vh 0 14vh;
+
+  text-align: center;
+}
+
+
+.the-place__motto > span {
+  color: rgba(247, 243, 235, 0.28);
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+}
+
+
+.the-place__motto h3 {
+  margin: 24px 0 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(42px, 5vw, 65px);
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+}
+
+
+.the-place__motto h3 em {
+  display: block;
+
+  color: var(--place-gold);
+
+  font-style: normal;
+}
+
+
+.the-place__motto-line {
+  width: 42px;
+  height: 1px;
+
+  margin: 28px auto 0;
+
+  background: var(--place-gold);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .the-place__frame {
+    width: 92vw;
+  }
+
+  .the-place__architecture {
+    width: 560px;
+    height: 380px;
+  }
+
+  .the-place__point--1 {
+    left: 6%;
+  }
+
+  .the-place__point--2 {
+    right: 6%;
+  }
+
+  .the-place__point--3 {
+    left: 6%;
+  }
+
+  .the-place__point--4 {
+    right: 6%;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .the-place {
+    min-height: 275vh;
+  }
+
+
+  .the-place__intro {
+    width: 86vw;
+
+    padding-top: 13vh;
+    padding-bottom: 5vh;
+  }
+
+
+  .the-place__eyebrow {
+    font-size: 8px;
+  }
+
+
+  .the-place__eyebrow i {
+    width: 18px;
+  }
+
+
+  .the-place__intro h2 {
+    font-size: clamp(43px, 12vw, 62px);
+  }
+
+
+  .the-place__description {
+    margin-top: 25px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+
+  .the-place__experience {
+    height: 100svh;
+
+    min-height: 650px;
+  }
+
+
+  .the-place__frame {
+    width: 94vw;
+    height: 540px;
+
+    min-height: 540px;
+  }
+
+
+  .the-place__frame::before {
+    inset: 10px;
+  }
+
+
+  .the-place__map {
+    inset: -25px;
+  }
+
+
+  .the-place__grid {
+    background-size: 30px 30px;
+  }
+
+
+  .the-place__glow {
+    width: 260px;
+    height: 260px;
+  }
+
+
+  .the-place__architecture {
+    width: 390px;
+    height: 300px;
+  }
+
+
+  .the-place__center {
+    width: 135px;
+    height: 135px;
+  }
+
+
+  .the-place__center strong {
+    font-size: 13px;
+  }
+
+
+  .the-place__center > span {
+    font-size: 7px;
+  }
+
+
+  .the-place__center small {
+    font-size: 4px;
+  }
+
+
+  .the-place__point {
+    gap: 6px;
+  }
+
+
+  .the-place__point-number {
+    width: 27px;
+    height: 27px;
+
+    font-size: 6px;
+  }
+
+
+  .the-place__point-name {
+    font-size: 8px;
+  }
+
+
+  .the-place__point--1 {
+    top: 11%;
+    left: 5%;
+  }
+
+
+  .the-place__point--2 {
+    top: 11%;
+    right: 5%;
+  }
+
+
+  .the-place__point--3 {
+    bottom: 12%;
+    left: 5%;
+  }
+
+
+  .the-place__point--4 {
+    bottom: 12%;
+    right: 5%;
+  }
+
+
+  .the-place__point--5 {
+    transform: translate(-50%, 120px);
+  }
+
+
+  .the-place__coordinates {
+    right: 21px;
+    top: 22px;
+
+    font-size: 5px;
+  }
+
+
+  .the-place__corner {
+    font-size: 5px;
+  }
+
+
+  .the-place__corner--top {
+    top: 21px;
+    left: 21px;
+  }
+
+
+  .the-place__corner--bottom {
+    right: 21px;
+    bottom: 21px;
+  }
+
+
+  .the-place__info {
+    bottom: 55px;
+
+    width: 78vw;
+  }
+
+
+  .the-place__info-category {
+    font-size: 6px;
+  }
+
+
+  .the-place__info h3 {
+    font-size: 25px;
+  }
+
+
+  .the-place__info p {
+    font-size: 10px;
+
+    line-height: 1.6;
+  }
+
+
+  .the-place__motto {
+    width: 86vw;
+
+    padding-top: 7vh;
+    padding-bottom: 10vh;
+  }
+
+
+  .the-place__motto h3 {
+    font-size: clamp(39px, 11vw, 55px);
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .the-place__frame {
+    height: 510px;
+    min-height: 510px;
+  }
+
+
+  .the-place__architecture {
+    width: 350px;
+    height: 270px;
+  }
+
+
+  .the-place__center {
+    width: 125px;
+    height: 125px;
+  }
+
+
+  .the-place__point-name {
+    font-size: 7px;
+  }
+
+
+  .the-place__point--5 {
+    transform: translate(-50%, 108px);
+  }
+
+
+  .the-place__info {
+    bottom: 50px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .the-place__map,
+  .the-place__glow,
+  .the-place__architecture {
+    transform: none !important;
+  }
+
+  .the-place__point {
+    transition: none;
+  }
+}

@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --black: #171715;
+  --black-deep: #10100f;
+  --gold: #c6a15b;
+  --gold-light: #d8bb80;
+  --sand: #e4d6bf;
+  --sand-light: #efe6d7;
+  --white: #f7f3eb;
+
+  font-family: "DM Sans", sans-serif;
+  color: var(--white);
+  background: var(--black);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+  background: var(--black);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+body,
+button,
+a {
+  font-family: "DM Sans", sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: 0;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.app {
+  min-height: 100vh;
+  background: var(--black);
+}
